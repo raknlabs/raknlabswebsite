@@ -37,12 +37,12 @@ export const siteConfig = {
   siteName: "RAKN LABS",
   tagline: "We Build Games",
   description:
-    "RAKN LABS is an independent game studio creating ambitious interactive experiences.",
+    "RAKN LABS is an independent game studio. Blazeball is the next game from the lab.",
   logo: "/images/rakn-labs-logo.png",
   logoMark: "/images/rakn-labs-logo-mark.png",
   ogImage: "/images/og-image.png",
   contactEmail: "",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://raknlabs.vercel.app",
 
   navigation: [
     { label: "Games", href: "/#games" },
@@ -70,15 +70,15 @@ export const siteConfig = {
 
   featuredGame: {
     kicker: "RAKN LABS PRESENTS",
-    title: "YOUR GAME TITLE",
-    tagline: "A SHORT EPIC TAGLINE",
+    title: "BLAZEBALL",
+    tagline: "The next game from RAKN LABS",
     description:
-      "A short placeholder synopsis. Replace this copy in siteConfig.ts when the game is ready to be revealed.",
-    genre: "Genre TBA",
+      "Blazeball is the next game from RAKN LABS. The full reveal lands here as launch approaches.",
+    genre: "Coming Soon",
     releaseStatus: "Coming Soon",
     heroImage: "/images/game-hero.webp",
     logoImage: "/images/game-logo.webp",
-    coverImage: "/images/game-01.webp",
+    coverImage: "/images/game-hero.webp",
     trailerCover: "/images/game-trailer-cover.webp",
     trailer: {
       provider: "none" as TrailerProvider,
@@ -119,9 +119,9 @@ export const siteConfig = {
   games: [
     {
       id: "main",
-      title: "YOUR GAME TITLE",
+      title: "BLAZEBALL",
       status: "Coming Soon",
-      image: "/images/game-01.webp",
+      image: "/images/game-hero.webp",
       href: "/#featured",
       featured: true,
     },
@@ -153,7 +153,7 @@ export const siteConfig = {
       id: "placeholder-01",
       category: "GAME UPDATE",
       title: "Coming Soon",
-      excerpt: "Development updates for the main game will appear here.",
+      excerpt: "Development updates for Blazeball will appear here.",
       date: "Coming Soon",
       href: "",
       image: "/images/news-01.webp",

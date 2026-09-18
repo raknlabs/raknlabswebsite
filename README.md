@@ -1,10 +1,13 @@
 # RAKN LABS
 
-Landing page oficial del estudio de videojuegos **RAKN LABS**.
+Landing oficial de **RAKN LABS**, estudio independiente de videojuegos.
 
-El juego es el protagonista. La marca lo presenta.
+El protagonista es **Blazeball**. RAKN LABS es la marca que lo presenta.
 
-Stack: Next.js, TypeScript, Tailwind CSS. Lista para desplegar en Vercel.
+- Web: [raknlabs.vercel.app](https://raknlabs.vercel.app)
+- Repo: [github.com/raknlabs/raknlabswebsite](https://github.com/raknlabs/raknlabswebsite)
+
+Stack: Next.js, TypeScript, Tailwind CSS. Lista para Vercel.
 
 ## Desarrollo local
 
@@ -22,55 +25,43 @@ npm start
 
 ## Cómo actualizar el contenido
 
-Todo el contenido editable vive en un solo archivo:
+Todo el contenido editable vive en:
 
 `lib/siteConfig.ts`
 
-Ahí cambias el nombre del juego, tagline, género, plataformas, noticias, redes y slots de futuros juegos.
+Ahí cambias el título de Blazeball, tagline, género, plataformas, noticias, redes y futuros juegos.
 
 ### Logo
 
-Coloca el logo en:
+- `public/images/rakn-labs-logo.png`
+- `public/images/rakn-labs-logo-mark.png` (navbar / footer)
 
-`public/images/rakn-labs-logo.png`
+### Key art de Blazeball
 
-La versión recortada para navbar/footer está en:
+Coloca el artwork con estos nombres:
 
-`public/images/rakn-labs-logo-mark.png`
+- `public/images/game-hero.webp` — hero a pantalla completa
+- `public/images/game-logo.webp` — logo de Blazeball
+- `public/images/game-01.webp` — cover / featured
+- `public/images/game-trailer-cover.webp` — cover del trailer
+- `public/images/game-screenshot-01.webp` … `04.webp`
 
-### Artwork del juego
+Si un archivo no existe, la web usa un placeholder cinematográfico.
 
-Sustituye estos archivos (mismos nombres y rutas):
+### Nombre y copy del juego
 
-- `public/images/game-hero.webp` — key art del hero (pantalla completa)
-- `public/images/game-logo.webp` — logo del juego
-- `public/images/game-01.webp` — artwork principal / cover
-- `public/images/game-trailer-cover.webp` — cover del trailer 16:9
-- `public/images/game-screenshot-01.webp` … `04.webp` — capturas
-- `public/images/game-02.webp` / `game-03.webp` — futuros juegos
+En `featuredGame` y en el primer ítem de `games`:
 
-Si un archivo no existe, la web muestra un placeholder cinematográfico en CSS. No hace falta inventar imágenes.
-
-### Nombre del juego
-
-En `lib/siteConfig.ts`, objeto `featuredGame`:
-
-- `title`
+- `title` → `BLAZEBALL`
 - `tagline`
-- `kicker`
 - `description`
 - `genre`
 - `releaseStatus`
 
-Actualiza también el primer ítem de `games` para que el catálogo coincida.
+### Redes y plataformas
 
-### Enlaces sociales
-
-En `siteConfig.socialLinks`, rellena `href`. Mientras esté vacío, el icono se muestra como “coming soon” y no inventa URLs.
-
-### Plataformas
-
-En `featuredGame.platforms`, pon `visible: true` y un `href` real para mostrar botones como Steam, Google Play o App Store. Si `visible` es `false`, el botón no se renderiza.
+- `socialLinks`: pega las URLs reales. Vacío = icono visible, sin enlace inventado.
+- `featuredGame.platforms`: `visible: true` + `href` para mostrar Steam, Play, App Store, etc.
 
 ### Trailer
 
@@ -78,24 +69,18 @@ En `featuredGame.trailer`:
 
 - YouTube: `provider: "youtube"` + `youtubeId`
 - Vimeo: `provider: "vimeo"` + `vimeoId`
-- MP4: `provider: "mp4"` + `mp4Src` (por ejemplo `/videos/trailer.mp4`)
+- MP4: `provider: "mp4"` + `mp4Src`
 
-### Añadir un nuevo juego
+### Añadir otro juego
 
-Añade un objeto a `games` en `siteConfig.ts` y coloca su imagen en `public/images/`. El primero con `featured: true` es la tarjeta grande.
-
-### SEO
-
-- Title y description: `app/layout.tsx` y `siteConfig`
-- Open Graph: `public/images/og-image.png`
-- Dominio público: variable `NEXT_PUBLIC_SITE_URL` (sin inventar uno)
+Añade un objeto a `games` y su imagen en `public/images/`.
 
 ## Despliegue en Vercel
 
-1. Sube el repositorio a GitHub / GitLab / Bitbucket.
-2. En [vercel.com](https://vercel.com) → Add New Project.
-3. Importa el repo. Framework: Next.js (autodetectado).
-4. Opcional: `NEXT_PUBLIC_SITE_URL` = `https://tu-dominio.vercel.app`
-5. Deploy.
+1. En [vercel.com](https://vercel.com) → Add New Project.
+2. Importa `raknlabs/raknlabswebsite`.
+3. Framework: Next.js.
+4. Environment variable: `NEXT_PUBLIC_SITE_URL` = `https://raknlabs.vercel.app`
+5. Deploy. El proyecto quedará en `raknlabs.vercel.app`.
 
 No hace falta backend ni base de datos.

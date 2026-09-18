@@ -23,19 +23,20 @@ const metadataBase = new URL(
 export const metadata: Metadata = {
   metadataBase,
   title: {
-    default: "RAKN LABS — We Build Games",
+    default: "RAKN LABS — Blazeball",
     template: "%s — RAKN LABS",
   },
   description: siteConfig.description,
   applicationName: siteConfig.siteName,
   keywords: [
     "RAKN LABS",
+    "Blazeball",
     "game studio",
     "video games",
     "independent games",
   ],
   openGraph: {
-    title: "RAKN LABS — We Build Games",
+    title: "RAKN LABS — Blazeball",
     description: siteConfig.description,
     siteName: siteConfig.siteName,
     type: "website",
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RAKN LABS — We Build Games",
+    title: "RAKN LABS — Blazeball",
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },

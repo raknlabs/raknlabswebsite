@@ -22,8 +22,8 @@ export function Social() {
             Follow the lab
           </h2>
           <p className="mx-auto mt-6 max-w-lg text-base text-white/60">
-            Drop your real profile URLs into siteConfig.ts. Until then, these
-            doors stay ready.
+            The official channels will live here. Stay close as the first game
+            approaches.
           </p>
         </Reveal>
         <Reveal delay={80} className="mt-12 flex justify-center">

@@ -53,7 +53,7 @@ export function Hero({ heroAvailable }: HeroProps) {
           alt={`${game.title} key art`}
           available={heroAvailable}
           placeholderLabel="KEY ART SLOT"
-          placeholderCaption={game.title}
+          placeholderCaption=""
           fill
           priority
           sizes="100vw"
@@ -69,15 +69,15 @@ export function Hero({ heroAvailable }: HeroProps) {
       <div className="vignette z-10" />
       <div className="absolute inset-x-0 bottom-0 z-10 h-40 bg-gradient-to-t from-void to-transparent" />
 
-      <div className="relative z-20 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-end px-5 pb-16 pt-28 sm:pb-20 md:px-8 lg:pb-24">
+      <div className="relative z-20 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-end px-5 pb-10 pt-28 sm:pb-16 md:px-8 lg:pb-20">
         <div className="hero-copy max-w-4xl">
           <p className="hero-kicker mb-4 font-display text-[0.7rem] font-semibold uppercase tracking-[0.48em] text-white/70 sm:text-[0.78rem]">
             {game.kicker}
           </p>
-          <h1 className="font-display text-[3.15rem] font-bold uppercase leading-[0.86] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[7.2rem]">
+          <h1 className="font-display text-[clamp(2.6rem,8vw,7.2rem)] font-bold uppercase leading-[0.86] tracking-tight text-white [text-shadow:0_8px_40px_rgba(0,0,0,0.55)]">
             {game.title}
           </h1>
-          <p className="mt-5 max-w-xl font-display text-lg font-medium uppercase tracking-[0.18em] text-white/75 sm:text-xl">
+          <p className="mt-5 max-w-xl font-display text-base font-medium uppercase tracking-[0.18em] text-white/85 sm:text-xl">
             {game.tagline}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">

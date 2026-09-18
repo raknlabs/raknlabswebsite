@@ -17,7 +17,7 @@ export function Logo({ className, mark = true, priority = false }: LogoProps) {
       width={mark ? 360 : 640}
       height={mark ? 146 : 427}
       priority={priority}
-      className={cn("h-8 w-auto md:h-9", className)}
+      className={cn("h-8 w-auto mix-blend-screen md:h-9", className)}
     />
   );
 }

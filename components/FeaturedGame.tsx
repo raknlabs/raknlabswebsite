@@ -77,12 +77,7 @@ export function FeaturedGame({
                   </Button>
                 ))}
               </div>
-            ) : (
-              <p className="mt-8 font-display text-xs uppercase tracking-[0.28em] text-white/35">
-                Platform buttons are ready in siteConfig.ts — hidden until a store
-                link is set.
-              </p>
-            )}
+            ) : null}
           </Reveal>
         </div>
 

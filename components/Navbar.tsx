@@ -20,6 +20,10 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
+    document.documentElement.dataset.navReady = "true";
+  }, []);
+
+  useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
@@ -30,7 +34,8 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled || open ? "nav-glass" : "bg-transparent",
+        scrolled && !open ? "nav-glass" : "bg-transparent",
+        open && "z-[70] bg-void",
       )}
     >
       <Link
@@ -72,8 +77,9 @@ export function Navbar() {
 
         <button
           type="button"
-          className="relative z-[60] inline-flex size-11 items-center justify-center text-white md:hidden"
+          className="relative z-[70] inline-flex size-11 items-center justify-center text-white md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
+          data-menu-toggle="true"
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
         >
@@ -83,7 +89,7 @@ export function Navbar() {
 
       <div
         className={cn(
-          "fixed inset-0 z-40 bg-void/96 pt-[var(--nav-h)] transition-opacity duration-300 md:hidden",
+          "fixed inset-0 z-[65] bg-void pt-[var(--nav-h)] transition-opacity duration-300 md:hidden",
           open ? "opacity-100" : "pointer-events-none opacity-0",
         )}
       >

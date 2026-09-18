@@ -58,9 +58,7 @@ function TrailerEmbed() {
           Coming Soon
         </p>
         <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-white/60">
-          Connect a YouTube ID, Vimeo ID, or MP4 file in{" "}
-          <span className="text-white/80">lib/siteConfig.ts</span> to play the
-          official trailer here.
+          The official trailer will play here when it is ready.
         </p>
       </div>
     </div>

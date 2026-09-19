@@ -155,6 +155,13 @@ body {
   border-bottom: 1px solid rgb(255 255 255 / 0.06);
 }
 
+.play-icon {
+  border-radius: 22%;
+  box-shadow:
+    0 10px 28px rgb(0 0 0 / 0.45),
+    0 0 0 1px rgb(255 255 255 / 0.08);
+}
+
 .media-frame {
   position: relative;
   overflow: hidden;

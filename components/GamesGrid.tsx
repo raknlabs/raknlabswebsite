@@ -31,6 +31,18 @@ function GameCard({
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
+        {featured ? (
+          <div className="play-icon relative mb-4 size-14 overflow-hidden sm:size-16">
+            <SmartImage
+              src={siteConfig.featuredGame.logoImage}
+              alt={`${game.title} icon`}
+              available
+              fill
+              className="object-cover"
+              sizes="64px"
+            />
+          </div>
+        ) : null}
         <p className="font-display text-[0.68rem] font-semibold uppercase tracking-[0.36em] text-rakn-cyan">
           {game.status}
         </p>

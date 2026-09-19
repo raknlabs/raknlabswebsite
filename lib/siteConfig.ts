@@ -40,7 +40,7 @@ export const siteConfig = {
     "RAKN LABS is an independent game studio. Blazeball is the next game from the lab.",
   logo: "/images/rakn-labs-logo.png",
   logoMark: "/images/rakn-labs-logo-mark.png",
-  ogImage: "/images/og-image.png",
+  ogImage: "/images/og-image.webp",
   contactEmail: "",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://raknlabs.vercel.app",
 
@@ -77,7 +77,7 @@ export const siteConfig = {
     genre: "Coming Soon",
     releaseStatus: "Coming Soon",
     heroImage: "/images/game-hero.webp",
-    logoImage: "/images/game-logo.webp",
+    logoImage: "/images/game-logo.png",
     coverImage: "/images/game-hero.webp",
     trailerCover: "/images/game-trailer-cover.webp",
     trailer: {

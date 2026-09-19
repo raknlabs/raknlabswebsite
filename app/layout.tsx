@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "RAKN LABS",
+        alt: "Blazeball — RAKN LABS",
       },
     ],
   },

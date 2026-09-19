@@ -57,17 +57,15 @@ export function Hero({ heroAvailable }: HeroProps) {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-[center_28%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-rakn-red/10 via-transparent to-rakn-cyan/10 mix-blend-screen" />
-        <div className="absolute -left-10 top-1/4 h-64 w-[45%] bg-rakn-red/20 blur-3xl" />
-        <div className="absolute right-0 bottom-1/4 h-72 w-[40%] bg-rakn-cyan/15 blur-3xl" />
+        <div className="absolute inset-0 bg-black/15" />
       </div>
 
       <ParticleField className="absolute inset-0 z-10 h-full w-full" />
       <div className="scanlines z-10" />
       <div className="vignette z-10" />
-      <div className="absolute inset-x-0 bottom-0 z-10 h-40 bg-gradient-to-t from-void to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 z-10 h-64 bg-gradient-to-t from-void via-void/75 to-transparent" />
 
       <div className="relative z-20 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-end px-5 pb-10 pt-28 sm:pb-16 md:px-8 lg:pb-20">
         <div className="hero-copy max-w-4xl">

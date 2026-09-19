@@ -42,16 +42,18 @@ export function FeaturedGame({
           </Reveal>
 
           <Reveal delay={80} className="flex flex-col justify-end pb-2">
-            <div className="relative mb-6 h-16 w-44">
+            <div className="mb-6">
               {logoAvailable ? (
-                <SmartImage
-                  src={game.logoImage}
-                  alt={`${game.title} logo`}
-                  available={logoAvailable}
-                  fill
-                  className="object-contain object-left"
-                  sizes="180px"
-                />
+                <div className="play-icon relative size-20 overflow-hidden sm:size-24">
+                  <SmartImage
+                    src={game.logoImage}
+                    alt={`${game.title} icon`}
+                    available={logoAvailable}
+                    fill
+                    className="object-cover"
+                    sizes="96px"
+                  />
+                </div>
               ) : (
                 <p className="font-display text-xs font-semibold uppercase tracking-[0.4em] text-white/40">
                   Game logo slot

@@ -31,11 +31,23 @@ export function Footer() {
             <SocialLinks />
           </div>
         </div>
-        <div className="flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
           <p className="text-xs tracking-[0.16em] text-white/40 uppercase">
             © {year} {siteConfig.siteName}
           </p>
-          <p className="text-xs text-white/30">We build games.</p>
+          <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            {siteConfig.legalNavigation.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="text-xs text-white/35 transition hover:text-white/70"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+            <li className="text-xs text-white/30">We build games.</li>
+          </ul>
         </div>
       </div>
     </footer>

@@ -236,6 +236,110 @@ body {
   background: #3a3a46;
 }
 
+.blueprint-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.corner-ticks::before,
+.corner-ticks::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  border-color: rgb(255 255 255 / 0.3);
+}
+
+.corner-ticks::before {
+  top: -1px;
+  left: -1px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.corner-ticks::after {
+  right: -1px;
+  bottom: -1px;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.doc-prose p {
+  margin: 0 0 1rem;
+  color: rgb(255 255 255 / 0.68);
+  line-height: 1.75;
+}
+
+.doc-prose ul,
+.doc-prose ol {
+  margin: 0 0 1rem;
+  padding-left: 1.15rem;
+  color: rgb(255 255 255 / 0.68);
+  line-height: 1.75;
+}
+
+.doc-prose li {
+  margin-bottom: 0.4rem;
+}
+
+.doc-prose ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.doc-prose ul > li {
+  position: relative;
+  padding-left: 1.15rem;
+}
+
+.doc-prose ul > li::before {
+  content: "";
+  position: absolute;
+  top: 0.7em;
+  left: 0;
+  width: 5px;
+  height: 1px;
+  background: var(--color-rakn-cyan);
+  opacity: 0.7;
+}
+
+.doc-prose ol {
+  list-style: decimal;
+}
+
+.doc-prose strong {
+  color: rgb(255 255 255 / 0.92);
+  font-weight: 600;
+}
+
+.doc-prose a {
+  color: var(--color-rakn-cyan);
+  text-decoration: underline;
+  text-decoration-color: rgb(34 230 255 / 0.35);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.doc-prose a:hover {
+  text-decoration-color: var(--color-rakn-cyan);
+}
+
+.doc-prose code {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 0.86em;
+  color: rgb(255 255 255 / 0.85);
+  background: rgb(255 255 255 / 0.06);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  padding: 0.12em 0.4em;
+}
+
+.doc-prose > *:last-child {
+  margin-bottom: 0;
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;

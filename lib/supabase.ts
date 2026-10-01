@@ -5,6 +5,8 @@
  * RLS and the deletion RPC requires a signed-in user session. The secret key
  * (sb_secret_...) must never appear here or in any NEXT_PUBLIC_ variable.
  */
+import { siteConfig } from "@/lib/siteConfig";
+
 export const SUPABASE_URL =
   process.env.NEXT_PUBLIC_SUPABASE_URL ??
   "https://esupyxnnczhzsccpryrf.supabase.co";
@@ -86,7 +88,8 @@ export function errorText(
 
 /**
  * Reads the one-time token Supabase appends to the email link as a URL
- * fragment, then strips it from the address bar so it is not left in history.
+ * fragment or query string, then strips it from the address bar so it is
+ * not left in history.
  */
 export function consumeAuthFragment(): {
   accessToken?: string;
@@ -94,25 +97,51 @@ export function consumeAuthFragment(): {
 } {
   if (typeof window === "undefined") return {};
 
-  const hash = window.location.hash;
-  if (!hash || hash.length < 2) return {};
+  const hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+  const queryParams = new URLSearchParams(window.location.search);
 
-  const params = new URLSearchParams(hash.replace(/^#/, ""));
-  const accessToken = params.get("access_token");
-  const errorDescription = params.get("error_description");
-  const errorCode = params.get("error");
+  const accessToken =
+    hashParams.get("access_token") ?? queryParams.get("access_token");
+  const errorDescription =
+    hashParams.get("error_description") ??
+    queryParams.get("error_description");
+  const errorCode =
+    hashParams.get("error") ??
+    queryParams.get("error") ??
+    hashParams.get("error_code") ??
+    queryParams.get("error_code");
 
   if (!accessToken && !errorDescription && !errorCode) return {};
 
   window.history.replaceState(null, "", window.location.pathname);
 
   if (accessToken) return { accessToken };
-  return {
-    error:
-      errorDescription ?? "That link is invalid or has expired.",
-  };
+
+  const raw = errorDescription ?? "That link is invalid or has expired.";
+  const decoded = raw.replace(/\+/g, " ");
+  if (errorCode === "otp_expired" || /expired|invalid/i.test(decoded)) {
+    return {
+      error:
+        "That email link has expired or was already used. Request a new one below.",
+    };
+  }
+  return { error: decoded };
 }
 
-export function emailRedirectTo(): string {
-  return `${window.location.origin}${window.location.pathname}`;
+/**
+ * Absolute URL Supabase will send the player back to after they open the
+ * emailed link. Always the public site + a dedicated path, never whatever
+ * page they happened to be on — otherwise Auth falls back to the project's
+ * Site URL (often http://localhost:3000).
+ */
+export function emailRedirectTo(path: "/reset-password" | "/delete-account"): string {
+  const configured = siteConfig.siteUrl.replace(/\/$/, "");
+  if (typeof window === "undefined") return `${configured}${path}`;
+
+  const host = window.location.hostname;
+  const origin =
+    host === "localhost" || host === "127.0.0.1"
+      ? window.location.origin
+      : configured;
+  return `${origin}${path}`;
 }

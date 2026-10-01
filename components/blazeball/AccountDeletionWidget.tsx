@@ -145,11 +145,12 @@ export function AccountDeletionWidget() {
 
     setBusy(true);
     try {
+      const redirectTo = emailRedirectTo("/delete-account");
       const result = await apiRequest(
         "POST",
-        `${AUTH_URL}/recover?redirect_to=${encodeURIComponent(emailRedirectTo())}`,
+        `${AUTH_URL}/recover?redirect_to=${encodeURIComponent(redirectTo)}`,
         anonHeaders(),
-        { email: target },
+        { email: target, redirect_to: redirectTo },
       );
 
       if (!result.ok) {

@@ -92,11 +92,12 @@ export function PasswordResetWidget({
 
     setBusy(true);
     try {
+      const redirectTo = emailRedirectTo("/reset-password");
       const result = await apiRequest(
         "POST",
-        `${AUTH_URL}/recover?redirect_to=${encodeURIComponent(emailRedirectTo())}`,
+        `${AUTH_URL}/recover?redirect_to=${encodeURIComponent(redirectTo)}`,
         anonHeaders(),
-        { email: target },
+        { email: target, redirect_to: redirectTo },
       );
 
       if (!result.ok) {

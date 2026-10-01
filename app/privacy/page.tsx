@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  DocCallout,
   DocPage,
   DocSection,
   DocSubheading,
@@ -280,8 +279,10 @@ export default function PrivacyPage() {
 
           <DocSection index="08" title="Account deletion">
             <p>
-              You can request deletion of your Blazeball account and associated
-              cloud data from inside the App:{" "}
+              You can delete your Blazeball account and associated cloud data
+              from the{" "}
+              <Link href="/delete-account">account deletion page</Link>, or from
+              inside the App:{" "}
               <strong>Options → Account → Delete my account</strong>, then
               confirm.
             </p>
@@ -292,10 +293,6 @@ export default function PrivacyPage() {
               We will process verified requests within a reasonable period and no
               later than applicable legal deadlines.
             </p>
-            <DocCallout>
-              Step-by-step instructions are available on the{" "}
-              <Link href="/delete-account">account deletion page</Link>.
-            </DocCallout>
           </DocSection>
 
           <DocSection index="09" title="Your rights">

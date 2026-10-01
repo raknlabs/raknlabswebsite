@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AccountDeletionWidget } from "@/components/blazeball/AccountDeletionWidget";
 import {
   DocCallout,
   DocPage,
@@ -13,7 +14,7 @@ import { legal } from "@/lib/legal";
 export const metadata: Metadata = {
   title: "Delete Your Blazeball Account",
   description:
-    "How to delete your Blazeball account and associated data (com.raknlabs.blazeball).",
+    "Delete your Blazeball account and all associated cloud data (com.raknlabs.blazeball).",
   alternates: { canonical: "/delete-account" },
 };
 
@@ -36,14 +37,28 @@ export default function DeleteAccountPage() {
               <br />
               Developer: <strong>RAKN LABS</strong>
               <br />
-              Last updated: {legal.lastUpdated}
+              Last updated: {legal.deletionLastUpdated}
             </>
           }
         >
-          <DocSection
-            index="01"
-            title="Delete from inside the app (recommended)"
-          >
+          <DocSection index="01" title="Delete your account here">
+            <p>
+              Sign in with your Blazeball account below to permanently delete
+              it. This is the same deletion used inside the game, so your
+              account and cloud progress are removed immediately.
+            </p>
+            <noscript>
+              <DocCallout tone="danger">
+                This form needs JavaScript. Please use the in-app flow in
+                section 2, or email us as described in section 3.
+              </DocCallout>
+            </noscript>
+            <div className="mt-7">
+              <AccountDeletionWidget />
+            </div>
+          </DocSection>
+
+          <DocSection index="02" title="Delete from inside the app">
             <p>If you still have Blazeball installed and can sign in:</p>
             <ol>
               <li>
@@ -70,13 +85,9 @@ export default function DeleteAccountPage() {
             </DocCallout>
           </DocSection>
 
-          <DocSection
-            index="02"
-            title="Request deletion by email (if you cannot use the app)"
-          >
+          <DocSection index="03" title="Request deletion by email">
             <p>
-              If you uninstalled the app, lost access to the device, or cannot
-              complete the in-app flow, email us from the{" "}
+              If you cannot use the form or the app, email us from the{" "}
               <strong>same email address</strong> used for your Blazeball
               account:
             </p>
@@ -100,7 +111,7 @@ export default function DeleteAccountPage() {
             </p>
           </DocSection>
 
-          <DocSection index="03" title="What gets deleted">
+          <DocSection index="04" title="What gets deleted">
             <ul>
               <li>Authentication account (email / sign-in)</li>
               <li>User ID and profile data linked to that account</li>
@@ -116,10 +127,14 @@ export default function DeleteAccountPage() {
             </p>
           </DocSection>
 
-          <DocSection index="04" title="More information">
+          <DocSection index="05" title="More information">
             <p>
               Full details are in our{" "}
               <Link href="/privacy">Privacy Policy</Link>.
+            </p>
+            <p>
+              Need to keep your account but change your password?{" "}
+              <Link href="/reset-password">Reset your password</Link>.
             </p>
             <p>
               Contact:{" "}

@@ -11,7 +11,7 @@ export function FounderPortrait() {
             alt={founder.portraitAlt}
             fill
             sizes="(min-width: 1024px) 24rem, 100vw"
-            className="object-cover grayscale-[18%]"
+            className="object-cover object-[center_18%]"
             priority
           />
         ) : (
@@ -24,7 +24,7 @@ export function FounderPortrait() {
             </span>
           </div>
         )}
-        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-void/70 via-transparent to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-void/35 via-transparent to-void/10" />
       </div>
       <figcaption className="mt-5 border-t border-white/10 pt-4">
         <p className="font-display text-base font-semibold uppercase tracking-[0.14em] text-white">

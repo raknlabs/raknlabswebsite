@@ -64,6 +64,7 @@ export const siteConfig = {
   legalNavigation: [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Delete Account", href: "/delete-account" },
+    { label: "Reset Password", href: "/reset-password" },
   ] as const,
 
   socialLinks: [

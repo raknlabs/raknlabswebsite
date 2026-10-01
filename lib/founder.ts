@@ -15,10 +15,9 @@ export const founder = {
   secondaryRole: "Software Developer & Product Manager",
 
   /**
-   * Drop a real portrait in /public/images and set the path here.
-   * While empty, the page renders a typographic placeholder frame instead.
+   * Set to "" to fall back to the typographic placeholder frame.
    */
-  portrait: "",
+  portrait: "/images/founder-adrian-g.jpg",
   portraitAlt: "Adrian G., Founder and CEO of Rakn Labs",
 
   hero: {

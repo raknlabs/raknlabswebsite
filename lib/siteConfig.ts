@@ -46,23 +46,24 @@ export const siteConfig = {
 
   navigation: [
     { label: "Games", href: "/#games" },
-    { label: "About", href: "/#about" },
-    { label: "Founder", href: "/about/ceo" },
+    { label: "About", href: "/about" },
     { label: "News", href: "/#news" },
     { label: "Careers", href: "/#careers" },
+    { label: "Privacy", href: "/privacy" },
   ] as const,
 
   footerNavigation: [
     { label: "Games", href: "/#games" },
-    { label: "About", href: "/#about" },
-    { label: "Founder", href: "/about/ceo" },
+    { label: "About", href: "/about" },
     { label: "News", href: "/#news" },
     { label: "Careers", href: "/#careers" },
+    { label: "Privacy", href: "/privacy" },
     { label: "Contact", href: "/#follow" },
   ] as const,
 
   legalNavigation: [
     { label: "Privacy Policy", href: "/privacy" },
+    { label: "Account", href: "/account" },
     { label: "Delete Account", href: "/delete-account" },
     { label: "Reset Password", href: "/reset-password" },
   ] as const,

@@ -19,8 +19,13 @@ import {
 } from "@/lib/supabase";
 
 type Step = "request" | "setPassword" | "done";
+type Variant = "reset" | "login";
 
-export function PasswordResetWidget() {
+export function PasswordResetWidget({
+  variant = "reset",
+}: {
+  variant?: Variant;
+}) {
   const [step, setStep] = useState<Step>("request");
   const [status, setStatus] = useState<Status>(null);
   const [busy, setBusy] = useState(false);
@@ -236,11 +241,12 @@ export function PasswordResetWidget() {
   return (
     <Panel>
       <h2 className="font-display text-xl font-semibold uppercase tracking-[0.06em] text-white">
-        Request a reset link
+        {variant === "login" ? "Sign in" : "Request a reset link"}
       </h2>
       <p className="mt-4 text-[0.98rem] leading-relaxed text-white/65">
-        Enter the email of your Blazeball account and we will send you a link to
-        set a new password. Open the link on this same device.
+        {variant === "login"
+          ? "Use the email linked to your Blazeball account. We will send a one-time link so you can set a new password."
+          : "Enter the email of your Blazeball account and we will send you a link to set a new password. Open the link on this same device."}
       </p>
       <form onSubmit={handleRequestLink}>
         <Field
@@ -253,7 +259,7 @@ export function PasswordResetWidget() {
           placeholder="you@example.com"
         />
         <SubmitButton busy={busy} busyLabel="Sending…">
-          Email me a reset link
+          {variant === "login" ? "Email me a sign-in link" : "Email me a reset link"}
         </SubmitButton>
       </form>
       <StatusMessage status={status} />

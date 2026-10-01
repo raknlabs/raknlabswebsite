@@ -16,11 +16,6 @@ const nextConfig: NextConfig = {
         destination: "/about/ceo",
         permanent: true,
       })),
-      {
-        source: "/about",
-        destination: "/about/ceo",
-        permanent: false,
-      },
     ];
   },
 };

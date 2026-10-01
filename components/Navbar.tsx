@@ -62,7 +62,13 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="hidden items-center gap-3 md:flex">
+          <Link
+            href="/account"
+            className="inline-flex h-11 items-center border border-white/15 px-4 font-display text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-white/80 transition hover:border-rakn-cyan hover:text-rakn-cyan"
+          >
+            Account
+          </Link>
           <Link
             href="/#follow"
             className="inline-flex size-11 items-center justify-center border border-white/15 text-white/80 transition hover:border-rakn-cyan hover:text-rakn-cyan"
@@ -107,13 +113,22 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <Link
-            href="/#follow"
-            onClick={() => setOpen(false)}
-            className="font-display text-sm font-semibold uppercase tracking-[0.32em] text-rakn-cyan"
-          >
-            Follow the lab
-          </Link>
+          <div className="flex flex-col gap-4">
+            <Link
+              href="/account"
+              onClick={() => setOpen(false)}
+              className="font-display text-sm font-semibold uppercase tracking-[0.32em] text-rakn-cyan"
+            >
+              Blazeball account
+            </Link>
+            <Link
+              href="/#follow"
+              onClick={() => setOpen(false)}
+              className="font-display text-sm font-semibold uppercase tracking-[0.32em] text-white/55"
+            >
+              Follow the lab
+            </Link>
+          </div>
         </div>
       </div>
     </header>

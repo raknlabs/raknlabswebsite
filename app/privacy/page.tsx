@@ -52,7 +52,8 @@ export default function PrivacyPage() {
             <p>
               By creating an account or using online features of the App, you
               acknowledge this Policy. If you do not agree, please do not create
-              an account or use those online features.
+              an account or use those online features. Use of the App is also
+              subject to our <Link href="/terms">Terms and Conditions</Link>.
             </p>
           </DocSection>
 
@@ -362,6 +363,8 @@ export default function PrivacyPage() {
               <br />
               Web:{" "}
               <a href={legal.siteUrl}>{legal.siteUrl.replace("https://", "")}</a>
+              <br />
+              Terms: <Link href="/terms">Terms and Conditions</Link>
             </p>
           </DocSection>
 

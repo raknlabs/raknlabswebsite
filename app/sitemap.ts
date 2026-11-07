@@ -7,6 +7,7 @@ const routes = [
   { path: "/about/ceo", priority: 0.7 },
   { path: "/careers", priority: 0.6 },
   { path: "/privacy", priority: 0.5 },
+  { path: "/terms", priority: 0.5 },
   { path: "/account", priority: 0.4 },
   { path: "/delete-account", priority: 0.3 },
 ];

@@ -53,7 +53,9 @@ export default function AccountPage() {
             </p>
             <p>
               How we handle your data is in the{" "}
-              <Link href="/privacy">Privacy Policy</Link>.
+              <Link href="/privacy">Privacy Policy</Link>. Use of the App is
+              also subject to the{" "}
+              <Link href="/terms">Terms and Conditions</Link>.
             </p>
             <p>
               Contact:{" "}
